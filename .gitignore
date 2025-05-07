@@ -1,0 +1,9 @@
+/node_modules/
+package-lock.json
+/build/
+/.idea
+/src/html/part/pwa.html
+/pwa
+/.env
+/src/pwa/
+/ssl/

@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@mixin isMobile {
+  @media (max-width: $width-mob) {
+    @content;
+  }
+}
+
+@mixin isDesktop {
+  @media (min-width: $width-mob) {
+    @content;
+  }
+}
+
+
+%pos-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+%pos-full {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%flex-bt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

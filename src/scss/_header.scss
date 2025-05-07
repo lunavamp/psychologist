@@ -1,0 +1,141 @@
+@use 'globals' as *;
+/* header */
+
+.header {
+  background: $color-2;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.header-container {
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: $dark-color;
+  text-decoration: none;
+
+  .psychologist-name {
+    color: $primary-color;
+    font-style: italic;
+    font-weight: 400;
+    line-height: .7;
+    text-align: right;
+    margin-right: -1rem;
+    font-size: 2.2rem;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  gap: 4rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: $dark-color;
+  font-size: 1.6rem;
+  transition: color .3s;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3rem;
+  height: 2.2rem;
+  cursor: pointer;
+  span {
+    display: block;
+    height: .4rem;
+    background: $dark-color;
+    border-radius: .2rem;
+    transition: transform .3s, opacity .3s;
+  }
+  &.active {
+    span:nth-child(1) {
+      transform: translateY(.9rem) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-.9rem) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $color-2;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s ease;
+    &.open {
+      max-height: 30rem;
+    }
+  }
+  .nav-list {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  .btn {
+    margin: 2rem;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+body{
+  // IS_SCROLL
+  &.is-scroll{
+    header{
+      box-shadow: 0 0 .25rem rgba(0,0,0,.4);
+      background: $bg-color;
+    }
+  }
+  &.is-scroll,  &.header-menu-active{
+    header {
+      color: $text-color;
+    }
+    .header-burger{
+      &::before, span, &::after{
+        background: $bg-color;
+      }
+    }
+  }
+  // IS_ACTIVE
+  &.header-menu-active{
+    overflow: hidden;
+    color: $bg-color;
+    .header-burger {
+      &::before {
+        transform: translateY(1rem) rotate(45deg);
+      }
+      span {
+        transform: scaleX(0);
+      }
+      &::after {
+        transform: translateY(-1.45rem) rotate(-45deg);
+      }
+    }
+
+    .header-nav-menu {
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
