@@ -7,7 +7,7 @@ const MODE = process.env.npm_lifecycle_event || 'dev';
 
 
 const configCompany = {
-	TITLE: 'Front-end Boilerplate by CrossFox.online',
+	TITLE: 'Практичний психолог Ірина Стефанишин',
 	URL: MODE === 'dev' ? '/': '',
 	DOMAIN: 'localhost', // only name without protocol
 	FOOTER_YEAR: new Date().getFullYear(),
@@ -34,8 +34,8 @@ const configCompany = {
 	PHONE: '<a href="tel:123456789">+1 234 567 89</a>',
 	AUTHOR: 'Oleksii Fursov',
 	//DESIGNED:
-	THEME_BACKGROUND: '#111',
-	THEME_COLOR: '#ff9800',
+	THEME_BACKGROUND: '#fafafa',
+	THEME_COLOR: '#c28543',
 };
 
 

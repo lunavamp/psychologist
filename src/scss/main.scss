@@ -8,7 +8,7 @@ body {
 /* hero */
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: 85vh;
   overflow: hidden;
   border-radius: $border-radius;
 
@@ -46,18 +46,18 @@ body {
     height: 100%;
     color: $color-2;
     padding: 0 0 8rem;
+    gap: 2rem;
 
-    .tagline {
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-
-      img {
-        height: 2rem;
-        width: 2rem;
-        margin-right: 0.5rem;
-        font-size: 1.8rem;
+    .hero-features {
+      li {
+        margin-left: 2.2rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        font-weight: 300;
+        &::marker {
+          content: "✔";
+          color: $primary-color;
+        }
       }
     }
 
@@ -66,19 +66,23 @@ body {
       line-height: 1.1;
       max-width: 90rem;
       margin-bottom: 2rem;
+      @include isMobile {
+        font-size: 3.6rem;
+      }
+    }
+
+    .btn {
+      margin-top: 2rem;
+      width: 55rem;
+      text-align: center;
     }
   }
 
-  @media (max-width: 768px) {
+  @include isMobile {
     height: 60vh;
 
-    .hero-content {
-      align-items: center;
-      text-align: center;
-
-      h1 {
-        font-size: 3.6rem;
-      }
+    .btn.btn-full {
+      width: 100%;
     }
   }
 }
@@ -96,17 +100,25 @@ body {
   .services-list {
     display: flex;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 6rem;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    margin: 1.8rem 0 3rem;
+    @include isMobile {
+      flex-direction: column;
+      gap: 4rem;
+    }
   }
   .service-item {
-    flex: 1 1 calc(25% - 3rem);
+    flex: 1 1 calc(33% - 6rem);
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .icon {
       width: 6rem;
       height: 6rem;
-      margin: 0 auto 2rem;
+      margin: 0 auto 2.2rem;
       img {
         width: 100%;
         height: 100%;
@@ -117,6 +129,8 @@ body {
     p {
       font-size: $font-xs;
       line-height: 1.6;
+      max-width: 45rem;
+      text-align: center;
     }
 
     h4 {
@@ -132,76 +146,128 @@ body {
   .text-center {
     text-align: center;
   }
+}
 
-  @media (max-width: $width-mob) {
-    .services-list {
-      flex-direction: column;
-      align-items: center;
-    }
-    .service-item {
-      flex: none;
-      width: 100%;
-      max-width: 40rem;
-      margin-bottom: 3rem;
-    }
+/* for who */
+.for-who {
+  gap: 3rem;
+  padding-top: 8rem;
+}
+.for-who-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.for-who-list .item {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  gap: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+}
+
+.for-who-list {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+
+  img {
+    height: 4.4rem;
+    width: 4.4rem;
   }
+}
+
+.for-who-list .text {
+  font-size: $font-xs;
 }
 
 /* about */
 .about-section {
   padding-top: 8rem;
   img {
-    height: 55.5rem;
-    width: 60rem;
+    height: 68rem;
+    width: 65rem;
     background-color: $dark-overlay;
     border-radius: $border-radius;
     object-fit: cover;
+    object-position: 50% 30%;
   }
 
   .about-info {
     gap: 3rem;
-    max-width: 90rem;
+    max-width: 70rem;
+  }
+
+  .about-text {
+    gap: 2rem;
+  }
+
+  ul {
+    max-width: 54rem;
   }
 
   li {
     margin-left: 2.2rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
+    list-style-type: circle;
     &::marker {
-      content: "✔";
+      font-size: 2rem;
       color: $primary-color;
     }
+  }
+
+  @include isMobile {
+    flex-direction: column;
+    gap: 4rem;
   }
 }
 
 /* review */
 .review-section {
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-    url("../img/review-bg.jpg") center/cover no-repeat fixed;
-
   color: #fff;
-  max-width: 180rem;
   margin: 0 auto 0 0;
   font-style: italic;
   font-size: $font-s;
   height: 33rem;
+  position: relative;
 
-  .review-container {
+  @include isMobile {
+    height: 85rem;
+  }
+
+  .review-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+      url("../img/review-bg.webp") center/cover no-repeat fixed;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
+    max-width: 180rem;
+    z-index: -1;
+    width: 100%;
+    height: 33rem;
+    @include isMobile {
+      height: 85rem;
+    }
   }
 
   .review-cards {
-    gap: 4rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 6rem;
     z-index: 1;
-    width: 100%;
+    @include isMobile {
+      flex-direction: column;
+    }
   }
 
   .card {
     gap: 3rem;
+
     .author {
       font-size: $font-xs;
       .author-name {
@@ -221,6 +287,9 @@ body {
   .price-cards {
     gap: 6rem;
     flex-wrap: wrap;
+    @include isMobile {
+      gap: 4rem;
+    }
     .card {
       flex: 1 1 calc(33.333% - 6rem);
       padding: 7rem 5rem;
@@ -264,6 +333,19 @@ body {
         justify-content: flex-start;
       }
     }
+
+    .discounted {
+      .prices {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .price2 {
+        color: $color-1;
+        text-decoration: line-through;
+        font-weight: 300;
+      }
+    }
   }
   @include isMobile() {
     .pricing-grid {
@@ -276,29 +358,61 @@ body {
 .faq-section {
   gap: 3rem;
 
+  @include isMobile {
+    padding-top: 0;
+  }
+  .faq-container {
+    gap: 10rem;
+
+    @include isMobile {
+      gap: 4rem;
+      flex-direction: column-reverse;
+    }
+    .questions {
+      width: 100%;
+      max-width: 90rem;
+      gap: 3rem;
+    }
+    img {
+      height: 54.6rem;
+      width: 60rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 3rem;
+      object-fit: cover;
+      @include isMobile {
+        height: 40rem;
+      }
+    }
+  }
+
   summary {
-    border: .1rem solid $color-1;
+    border: 0.1rem solid $color-1;
     border-radius: 1rem;
     padding: 1.2rem 4.2rem 1.2rem 2.4rem;
+    font-size: $font-xs;
+  }
+
+  details {
+    p {
+      padding: 2rem 1rem;
+    }
   }
 
   details summary::-webkit-details-marker {
     display: none;
   }
-  
 
   details summary::marker {
     content: none;
   }
-  
 
   details summary {
     position: relative;
     padding-left: 1.5em;
     appearance: none;
     -webkit-appearance: none;
-    list-style: none; 
-    cursor: pointer;   
+    list-style: none;
+    cursor: pointer;
   }
 
   details summary::before {
@@ -309,40 +423,122 @@ body {
     transform: translateY(-50%);
     padding-right: 2.4rem;
     font-size: 3.4rem;
+    font-weight: 200;
     line-height: 1;
     transition: transform 0.2s ease, content 0.2s ease;
     color: $primary-color;
   }
-  
+
   details[open] summary::before {
     content: "–";
   }
 }
 
 .footer {
-  background: $brand-color;
-  text-align: center;
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
+  background: $color-1;
+  font-size: $font-xs;
   width: 100%;
   translate: 0 100%;
   transition: 0.4s;
+
+  .footer-container {
+    @include isMobile {
+      flex-direction: column;
+      gap: 4rem;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+
+  a {
+    color: $color-2;
+    transition: all ease-out 0.3s;
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+
+  .footer-right,
+  .footer-left {
+    flex: 1;
+    color: $color-2;
+  }
+
+  .footer-left {
+    gap: 1.5rem;
+    .quote {
+      max-width: 57rem;
+      font-style: italic;
+    }
+  }
+
+  .footer-right {
+    @include isMobile {
+      flex-direction: column-reverse;
+      gap: 4rem;
+    }
+    ul {
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact {
+      gap: 1.5rem;
+      .social {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+
+        img {
+          height: 2.4rem;
+          width: 2.4rem;
+          scale: 1;
+          transition: scale 0.3s;
+          &:hover {
+            scale: 1.1;
+          }
+        }
+      }
+    }
+  }
 
   &.run {
     translate: 0;
   }
 }
 
+.header {
+  translate: 0 -100%;
+  transition: 0.3s $anim-func;
+}
 .loaded {
-  .anim {
-    opacity: 0;
-    translate: 3vw 0;
-    transition: 0.3s $anim-func;
+  .header {
+    translate: 0;
+  }
+}
 
-    &.run {
-      opacity: 1;
-      translate: 0;
-    }
+.anim,
+#about li,
+#services li,
+#prices li,
+#for-who li {
+  opacity: 0;
+  translate: 0 3vw;
+  transition: 0.3s $anim-func;
+
+  &.run {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+.anim-scale {
+  scale: 0;
+  transition: 0.3s $anim-func;
+  &.run {
+    scale: 1;
   }
 }

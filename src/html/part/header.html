@@ -1,27 +1,75 @@
 @@include('meta.html', {title: "@@title", description: "@@description"})
-<header class="header">
+<header
+  class="header"
+  role="banner"
+  itemscope
+  itemtype="https://schema.org/WPHeader"
+>
   <div class="header-container container flex-sb">
-    <a href="#" class="logo"
-      ><div>
-        <p>Практичний психолог</p>
-        <p class="psychologist-name">Ірина Стефанишин</p>
-      </div></a
+    <a
+      href="#hero"
+      class="logo"
+      itemprop="url"
+      aria-label="Перейти до початку сторінки: Практичний психолог Ірина Стефанишин"
     >
-    <nav class="nav">
-      <ul class="nav-list flex-sb">
-        <li><a href="#">Головна</a></li>
-        <li><a href="#">Про мене</a></li>
-        <li><a href="#">Послуги</a></li>
-        <li><a href="#">Відгуки</a></li>
-        <li><a href="#">Прайс</a></li>
-        <li><a href="#">Питання-Відповідь</a></li>
+      <div itemscope itemtype="https://schema.org/Person" itemprop="publisher">
+        <p itemprop="jobTitle">Практичний психолог</p>
+        <p class="psychologist-name" itemprop="name">Ірина Стефанишин</p>
+      </div>
+    </a>
+ <div class="header-nav-menu-wrap">
+               
+    <nav class="nav header-nav-menu" aria-label="Головне навігаційне меню">
+      <ul class="nav-list flex-sb" role="list">
+        <li><a href="#hero">Головна</a></li>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#review">Відгуки</a></li>
+        <li><a href="#prices">Прайс</a></li>
+        <li><a href="#faq">Питання — Відповідь</a></li>
       </ul>
     </nav>
-    <a href="#" class="btn btn-full">Запис на консультацію</a>
-    <div class="burger">
-      <span></span>
-      <span></span>
-      <span></span>
+
     </div>
+
+    <div class="header-right flex-sb">
+      <div class="social flex-sb" aria-label="Соціальні мережі">
+        <a
+          href="https://t.me/your_profile"
+          aria-label="Telegram"
+          itemprop="sameAs"
+        >
+          <img
+            src="../../img/icons/telegram.svg"
+            alt="Логотип Telegram"
+            title="Telegram"
+            loading="lazy"
+          />
+        </a>
+        <a
+          href="https://instagram.com/your_profile"
+          aria-label="Instagram"
+          itemprop="sameAs"
+        >
+          <img
+            src="../../img/icons/instagram.svg"
+            alt="Логотип Instagram"
+            title="Instagram"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      <a
+        href="tel:+48730020111"
+        aria-label="Подзвонити +48 (730) 020-111"
+        itemprop="telephone"
+      >
+        +48 (730) 020-111
+      </a>
+    </div>
+
+    <button type="button" data-action='header-burger' class="header-burger">
+                <span></span>
+            </button>
   </div>
 </header>

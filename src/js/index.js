@@ -1,51 +1,36 @@
 import {
-	$,
-	init,
-	onClick,
-	onClickHash,
-	onReady,
-	vAnimRun,
-} from '../../core/cfjs'
+  $,
+  init,
+  onClick,
+  onClickHash,
+  onReady,
+  vAnim,
+  vAnimList,
+  vAnimRun,
+} from "../../core/cfjs";
 
 init({
-	loadedAnimAfter: '.header',
-	onScrollThrottle:10,
+  loadedAnimAfter: ".header",
+  onScrollThrottle: 10,
 });
-onReady(()=>{
-	vAnimRun('.footer', ()=>vAnimRun('#hero'))
-})
-
-
-onClick('header-burger', ()=>{
-	bc.toggle('header-menu-active');
+onReady(() => {
+  vAnimRun(".footer", () => vAnimRun("#hero"));
 });
 
-onClick(/modal-(active|close)-(.+)/, (e, [query, action]) => {
-	bc.toggle(query, action === 'active');
-	gtag('event', action)
+onClick("header-burger", () => {
+  bc.toggle("header-menu-active");
 });
 
+onClickHash(() => {
+  bc.remove("header-menu-active");
+});
 
-onClick(/(overlay|close-modal)/, () => {
-	bc.forEach(name => {
-		if (name.includes('modal-active')) {
-			bc.remove(name)
-			const md = $("."+name.replace('-active-', '-'));
-			md.classList.forEach(clName => {
-				if(clName.startsWith('is-')){
-					setTimeout(()=>{
-						md.classList.remove(clName)
-					}, 300)
-				}
-			})
-			gtag('event', name.replace('active', 'close'))
-		}
-	})
-})
+vAnim(".anim", (el) => el.classList.add("run"));
+vAnimList("#about ul");
+vAnimList("#prices ul");
+vAnimList("#for-who ul");
+vAnimList("#services ul");
 
-onClickHash(()=>{
-	bc.remove('header-menu-active')
-})
 
 // const burger = document.querySelector('.burger');
 // const nav = document.querySelector('.nav');

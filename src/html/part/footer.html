@@ -1,8 +1,84 @@
-<footer class="footer">
-    <p>
-        All rights reserved. @@FOOTER_YEAR @@COMPANY_NAME
-    </p>
+<footer
+  class="footer"
+  role="contentinfo"
+  itemscope
+  itemtype="https://schema.org/WPFooter"
+>
+  <div class="footer-container container flex-sb section">
+    <div class="footer-left flex-cl">
+      <p>
+        <span itemprop="copyrightYear">@@FOOTER_YEAR</span>
+        &copy; Всі права захищені. 
+        <span
+          itemscope
+          itemtype="https://schema.org/Organization"
+          itemprop="copyrightHolder"
+        >@@COMPANY_NAME</span>
+      </p>
+      <p class="quote">Nolite Te Bastardes Carborundorum.</p>
+    </div>
+
+    <div class="footer-right flex-sb">
+      <nav class="nav" aria-label="Футерна навігація">
+        <ul class="flex-cl" role="list">
+          <li><a href="#hero">Головна</a></li>
+          <li><a href="#about">Про мене</a></li>
+          <li><a href="#services">Послуги</a></li>
+          <li><a href="#review">Відгуки</a></li>
+          <li><a href="#prices">Прайс</a></li>
+          <li><a href="#faq">Питання — Відповідь</a></li>
+        </ul>
+      </nav>
+
+      <div class="flex-cl contact">
+        <div class="social" aria-label="Соціальні мережі">
+          <a
+            href="https://t.me/your_profile"
+            aria-label="Telegram"
+            itemprop="sameAs"
+          >
+            <img
+              src="../../img/icons/telegram.svg"
+              alt="Логотип Telegram"
+              title="Telegram"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://instagram.com/your_profile"
+            aria-label="Instagram"
+            itemprop="sameAs"
+          >
+            <img
+              src="../../img/icons/instagram.svg"
+              alt="Логотип Instagram"
+              title="Instagram"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <a
+          href="tel:+48730020111"
+          aria-label="Подзвонити +48 (730) 020-111"
+          itemprop="telephone"
+        >
+          +48 (730) 020-111
+        </a>
+        <a
+          href="#contact"
+          class="btn btn-full"
+          aria-label="Зв'язатись зі мною"
+          itemprop="potentialAction"
+          itemscope
+          itemtype="https://schema.org/ReserveAction"
+        >
+          Зв'язатись зі мною
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
+
 <script src="/js/index.js"></script>
 
 <script type="application/ld+json">{

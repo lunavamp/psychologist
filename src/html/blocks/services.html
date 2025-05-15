@@ -1,60 +1,165 @@
-<section class="services-section section">
+<section
+  id="services"
+  class="services-section section"
+  aria-labelledby="services-heading"
+  itemscope
+  itemtype="https://schema.org/ItemList"
+>
   <div class="services-container container flex-cl">
-    <h3 class="intro-title">Послуги</h3>
-    <h2 class="main-title">Що я пропоную?</h2>
-    <ul class="services-list flex-sb">
-      <li class="service-item">
+    <div class="titles">
+      <h3 id="services-heading" class="intro-title anim">Послуги</h3>
+      <h2 class="main-title anim" itemprop="name">Що я пропоную?</h2>
+    </div>
+
+    <ul class="services-list flex-sb" role="list" aria-label="Список послуг">
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
         <div class="icon">
-          <img src="../../img/icons/psychology.svg" alt="Health psychology" />
+          <img
+            src="../../img/icons/psychology.svg"
+            alt="Індивідуальна сесія з психологом"
+            title="Індивідуальні сесії"
+            loading="lazy"
+            itemprop="image"
+          />
         </div>
-        <h4>Індивідуальні сесії</h4>
-        <p>
-          Глибока робота з вашими викликами — без зайвої теорії, лише чіткі
-          кроки до бажаних змін і відчутних результатів.
+        <h4 itemprop="name">Індивідуальні сесії</h4>
+        <p itemprop="description">
+          Глибока робота з вашими запитами, чіткі кроки до бажаних змін і
+          відчутніх результатів.
         </p>
       </li>
-      <li class="service-item">
+
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
         <div class="icon">
-          <img src="../../img/icons/control.svg" alt="Confident treatment" />
+          <img
+            src="../../img/icons/control.svg"
+            alt="Управління стресом і тривогою"
+            title="Управління стресом і тривогою"
+            loading="lazy"
+            itemprop="image"
+          />
         </div>
-        <h4>Управління стресом і тривогою</h4>
-        <p>
-          Розробимо ваш персональний «антистрес-план» і навчимося
-          використовувати тривогу як джерело енергії, а не як гальмо.
+        <h4 itemprop="name">Управління стресом і тривогою</h4>
+        <p itemprop="description">
+          Розроблю для вас персональну програму для опанування страху, навчу вас
+          як використовувати тривогу для досягнення цілей та як нею керувати
         </p>
       </li>
-      <li class="service-item">
+
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
         <div class="icon">
           <img
             src="../../img/icons/reflection.svg"
-            alt="Drug abuse prevention"
+            alt="Психологічна допомога у кризових станах"
+            title="Кризові стани"
+            loading="lazy"
+            itemprop="image"
           />
         </div>
-        <h4>Когнітивно-поведінкова терапія</h4>
-        <p>
-          Переосмислимо ваші думки і звички — замість шкідливих сценаріїв
-          сформуємо корисні установки для щоденного життя.
+        <h4 itemprop="name">Кризові стани</h4>
+        <p itemprop="description">
+          Навчу вас як прожити кризовий стан та опанувати нову реальність
         </p>
       </li>
-      <li class="service-item">
+
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
         <div class="icon">
-          <img src="../../img/icons/practice.svg" alt="Assessment treatment" />
+          <img
+            src="../../img/icons/practice.svg"
+            alt="Коучинг особистісного зростання"
+            title="Коучинг"
+            loading="lazy"
+            itemprop="image"
+          />
         </div>
-        <h4>Коучинг самовпевненості</h4>
-        <p>
-          Працюємо над внутрішнім діалогом так, щоб ви говорили про себе
-          впевнено й із гордістю, а не з сумнівами.
+        <h4 itemprop="name">Коучинг</h4>
+        <p itemprop="description">
+          Допомагаю створити вашу кращу версію, працюємо з глибиннними
+          переконаннями та внутрішнім діалогом
+        </p>
+      </li>
+
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
+        <div class="icon">
+          <img
+            src="../../img/icons/anxiety.svg"
+            alt="Підтримка при неврозі"
+            title="Невроз"
+            loading="lazy"
+            itemprop="image"
+          />
+        </div>
+        <h4 itemprop="name">Робота з неврозами</h4>
+        <p itemprop="description">
+          Допомагаю знайти причину неврозу, розробляю стратегію роботи і
+          підбираю найбільш ефективний для вас метод психотерапії
+        </p>
+      </li>
+
+      <li
+        class="service-item"
+        itemscope
+        itemprop="itemListElement"
+        itemtype="https://schema.org/Service"
+      >
+        <div class="icon">
+          <img
+            src="../../img/icons/relations.svg"
+            alt="Робота з проблемами у стосунках"
+            title="Проблеми в стосунках"
+            loading="lazy"
+            itemprop="image"
+          />
+        </div>
+        <h4 itemprop="name">Проблеми в стосунках</h4>
+        <p itemprop="description">
+          Розвиваємо навички для вирішення конфліктів і створення гармонійнійних
+          стосунків
         </p>
       </li>
     </ul>
-    <p class="services-text">
-      Оберіть свій формат роботи — від індивідуальних сесій і арт-терапії до
-      онлайн-воркшопів. Дізнайтесь як знизити стрес, знайти впевненість і жити в
-      гармонії з собою. Почніть змінювати життя вже сьогодні та відчуйте різницю
+
+    <p class="services-text anim" itemprop="about">
+     Почніть змінювати життя вже сьогодні та відчуйте різницю
       з перших кроків!
     </p>
+
     <div class="text-center">
-      <a href="#" class="btn btn-outlined">Дізнатись вартість</a>
+      <a
+        href="#prices"
+        class="btn btn-outlined"
+        aria-label="Дізнатись вартість"
+        itemprop="potentialAction"
+        itemscope
+        itemtype="https://schema.org/ReserveAction"
+      >
+        Дізнатись вартість
+      </a>
     </div>
   </div>
 </section>

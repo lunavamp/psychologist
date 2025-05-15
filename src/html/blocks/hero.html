@@ -1,11 +1,52 @@
-<section class="hero-section container">
-    <div class="video-wrapper">
-      <video src="../../img/hero-bg.mp4" autoplay muted loop playsinline></video>
-    </div>
-    <div class="hero-content container">
-      <p class="tagline flex"><img src="../../img/icons/search-process.svg" alt="">Пізнай себе вже сьогодні</p>
-      <h1>Консультації психолога онлайн</h1>
-      <a href="#" class="btn btn-full">Запис на консультацію</a>
-    </div>
-  </section>
-  
+<section
+  id="hero"
+  class="hero-section container anim-scale"
+  role="banner"
+  aria-labelledby="hero-title"
+  itemscope
+  itemtype="https://schema.org/WebPageElement"
+>
+
+  <div class="video-wrapper" aria-hidden="true" role="presentation">
+    <video
+      src="../../img/hero-bg.mp4"
+      poster="../../img/hero-bg-poster.jpg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      loading="lazy"
+      aria-label="Фонове відео: консультація психолога"
+    >
+      Ваш браузер не підтримує відео.
+    </video>
+  </div>
+
+  <div class="hero-content container">
+
+    <h1 id="hero-title" itemprop="headline">
+      Професійна онлайн-консультація психолога
+    </h1>
+
+
+    <ul class="hero-features" role="list" aria-label="Переваги консультації">
+      <li itemprop="benefit">Перший результат вже після 1–3 сесій</li>
+      <li itemprop="benefit">Глибока діагностика та виявлення проблем</li>
+      <li itemprop="benefit">Конкретний план дій під ваші цілі</li>
+      <li itemprop="benefit">Гарантована конфіденційність</li>
+    </ul>
+
+
+    <a
+      href="#contact"
+      class="btn btn-full"
+      aria-label="Записатися на консультацію"
+      itemprop="potentialAction"
+      itemscope
+      itemtype="https://schema.org/ReserveAction"
+    >
+      Записатися на консультацію
+    </a>
+  </div>
+</section>
