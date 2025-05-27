@@ -36,6 +36,9 @@ main {
 
 .section {
   padding: 8rem 0;
+  @include isMobile {
+     padding: 6rem 0;
+  }
 }
 
 .flex {
@@ -69,6 +72,9 @@ h2,
   color: $text-color;
   margin: 1.2rem 0;
   line-height: 1.1;
+  @include isMobile {
+    font-size: 3rem;
+  }
 }
 
 h3 {
@@ -86,11 +92,13 @@ h4 {
 
 .btn {
   display: inline-block;
-  padding: 1.3rem 3rem;
+  padding: 1.5rem 3rem;
   font-size: $font-xs;
   border-radius: 0.8rem;
   text-decoration: none;
   width: fit-content;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .btn-full {

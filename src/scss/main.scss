@@ -6,47 +6,46 @@ body {
   background: $color-2;
 }
 /* hero */
+
 .hero-section {
-  position: relative;
-  height: 85vh;
+  // height: 100vh;
   overflow: hidden;
-  border-radius: $border-radius;
+  padding: 8.5rem 0 8rem;
+  position: relative;
 
   .video-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 77rem;
+    position: absolute;
+    z-index: -1;
 
     video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(85%);
+      filter: brightness(55%);
+      border-radius: $border-radius;
+    }
+
+    @include isMobile {
+      height: 53.4rem;
     }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $dark-overlay;
-  }
-
   .hero-content {
-    position: relative;
-    z-index: 2;
+    // position: absolute;
+    // z-index: 2;
+    // left: 8.5rem;
+    // bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
     color: $color-2;
-    padding: 0 0 8rem;
+    padding: 25.3rem 0 8rem;
     gap: 2rem;
+
+    @include isMobile {
+      padding: 15.3rem 0 6rem;
+    }
 
     .hero-features {
       li {
@@ -58,16 +57,20 @@ body {
           content: "✔";
           color: $primary-color;
         }
+        @include isMobile {
+           font-size: $font-xs-mob;
+        }
       }
     }
 
     h1 {
       font-size: $font-xl;
       line-height: 1.1;
-      max-width: 90rem;
+      max-width: 95rem;
       margin-bottom: 2rem;
+
       @include isMobile {
-        font-size: 3.6rem;
+        font-size: 3rem;
       }
     }
 
@@ -96,6 +99,15 @@ body {
 .services-section {
   background: $bg-color;
   text-align: center;
+      @include isMobile {
+       text-align: start;
+       .services-container {
+        align-items: flex-start;
+        p {
+          text-align: start;
+        }
+       }
+      }
 
   .services-list {
     display: flex;
@@ -106,6 +118,10 @@ body {
     @include isMobile {
       flex-direction: column;
       gap: 4rem;
+        .service-item {
+          align-items: flex-start;
+          text-align: start;
+        }
     }
   }
   .service-item {
@@ -115,10 +131,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     .icon {
       width: 6rem;
       height: 6rem;
       margin: 0 auto 2.2rem;
+      @include isMobile {
+          margin: 0 0 2.2rem;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -131,6 +151,10 @@ body {
       line-height: 1.6;
       max-width: 45rem;
       text-align: center;
+      @include  isMobile {
+        text-align: start;
+        font-size: $font-xs-mob;
+      }
     }
 
     h4 {
@@ -152,6 +176,9 @@ body {
 .for-who {
   gap: 3rem;
   padding-top: 8rem;
+  @include isMobile {
+    padding-top: 6rem;
+  }
 }
 .for-who-list {
   display: grid;
@@ -183,18 +210,24 @@ body {
 
 .for-who-list .text {
   font-size: $font-xs;
+  @include isMobile {
+     font-size: $font-xs-mob;
+  }
 }
 
 /* about */
 .about-section {
   padding-top: 8rem;
   img {
-    height: 68rem;
+    height: 67.5rem;
     width: 65rem;
     background-color: $dark-overlay;
     border-radius: $border-radius;
     object-fit: cover;
     object-position: 50% 30%;
+    @include isMobile {
+      height: 55.5rem;
+    }
   }
 
   .about-info {
@@ -224,6 +257,7 @@ body {
   @include isMobile {
     flex-direction: column;
     gap: 4rem;
+    padding-top: 6rem;
   }
 }
 
@@ -270,6 +304,9 @@ body {
 
     .author {
       font-size: $font-xs;
+      @include isMobile {
+         font-size: $font-xs-mob;
+      }
       .author-name {
         color: $primary-color;
       }
@@ -284,6 +321,7 @@ body {
   h3 {
     text-align: center;
   }
+  background-color: $color-2;
   .price-cards {
     gap: 6rem;
     flex-wrap: wrap;
@@ -304,6 +342,9 @@ body {
       }
       .price-text {
         font-size: $font-xs;
+        @include isMobile {
+           font-size: $font-xs-mob;
+        }
       }
       .price {
         font-size: $font-l;
@@ -335,6 +376,8 @@ body {
     }
 
     .discounted {
+      position: relative;
+
       .prices {
         display: flex;
         gap: 1rem;
@@ -344,6 +387,17 @@ body {
         color: $color-1;
         text-decoration: line-through;
         font-weight: 300;
+      }
+
+      &::after {
+        position: absolute;
+        content: "-10%";
+        top: 2.5rem;
+        right: 0;
+        color: $color-2;
+        background-color: $color-1;
+        width: 10rem;
+        padding: 0.25rem;
       }
     }
   }
@@ -388,8 +442,12 @@ body {
   summary {
     border: 0.1rem solid $color-1;
     border-radius: 1rem;
-    padding: 1.2rem 4.2rem 1.2rem 2.4rem;
+    padding: 1.5rem 4.2rem 1.5rem 2.4rem;
     font-size: $font-xs;
+    line-height: 1.1;
+    @include isMobile {
+        font-size: $font-xs-mob;
+    }
   }
 
   details {
@@ -442,6 +500,7 @@ body {
   transition: 0.4s;
 
   .footer-container {
+      font-size: $font-xs-mob;
     @include isMobile {
       flex-direction: column;
       gap: 4rem;
